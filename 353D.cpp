@@ -26,6 +26,7 @@ const int Move8[8][2]={{0,1},{0,-1},{1,0},{-1,0},{1,1},{1,-1},{-1,1},{-1,-1}};
 using mint = atcoder::modint998244353;
 
 int main () {
+    std::cout << __cplusplus << std::endl;
     ll N;cin>>N;
     vector<ll> A(N);
     vector<ll> Keta(N);
