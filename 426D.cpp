@@ -34,9 +34,29 @@ int main () {
     while(T--){
         ll N;cin>>N;
         string S;cin>>S;
+
+        ll longest0=0,longest1=0;
+        ll cnt0=0,cnt1=0;
+        ll sum0=0,sum1=0;
+        for(auto c:S){
+            if(c=='0'){
+                sum0++;
+
+                cnt0++;
+                cnt1=0;
+                longest0=max(longest0,cnt0);
+            }else{
+                sum1++;
+
+                cnt1++;
+                cnt0=0;
+                longest1=max(longest1,cnt1);
+            }
+        }
         
-        //0を目指す場合
-        
+        ll to0 = (sum0-longest0)*2+sum1;
+        ll to1 = (sum1-longest1)*2+sum0;
+        cout<<min({to0,to1})<<endl;
     }
     
 }
